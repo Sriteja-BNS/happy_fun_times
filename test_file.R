@@ -49,3 +49,50 @@ my_mean <- function(numbers) {
 my_mean(st_joe_land$sale_price)
 my_mean(st_joe_land_datatable$sale_price
 )
+
+apply(X=st_joe_land[,c("sale_price","year_built")],
+      MARGIN=2,
+      FUN= mean)
+
+
+sample (x= c(1:1000,NA),
+        size=1001) |>
+  mean()
+  mean(na.rm=TRUE)
+  
+  
+  cor_data <- data.frame(x = sample(c(rnorm(n = 100), NA), 10000, replace = TRUE), 
+                         y = sample(c(rnorm(n = 100), NA), 10000, replace = TRUE), 
+                         z = sample(c(rnorm(n = 100), NA), 10000, replace = TRUE))
+  
+  cor(cor_data,y=NULL,use="pairwise.complete.obs")
+
+  
+  summary(st_joe_land)
+  
+  View(st_joe_land)
+  
+  
+  summary(st_joe_land$school_district)
+  summary(as.factor(st_joe_land$school_district))
+  summary(as.numeric(st_joe_land$school_district))
+  
+  
+  factor(seq(from = 1, to = 10, by = .5)) |>
+    as.numeric() |>
+    mean()
+    
+ land_value <- st_joe_land 
+land_value$dollar_per_acre <- land_value$sale_price / land_value$acreage
+mean (land_value$dollar_per_acre[land_value$dollar_per_acre != Inf])  
+
+View(land_value$dollar_per_acre)
+
+land_value[, c("sale_price", "bedrooms")]
+
+drop_vars <- which(names(land_value) %in% c("sale_price", "bedrooms"))
+
+land_value[, -drop_vars]
+
+
+####land_value[, - "bedrooms"] wont work as it isnt a number 
